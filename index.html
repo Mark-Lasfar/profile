@@ -1,1139 +1,1671 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ============================================ -->
+    <!-- SEARCH ENGINE VERIFICATION (Meta Tags) -->
+    <!-- ============================================ -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE">
 
-    <title>Mark Alasfar - Senior Full-Stack Developer CV</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Knowledge Panel Social Links -->
+    <link rel="me" href="https://github.com/Mark-Lasfar">
+    <link rel="me" href="https://linkedin.com/in/mark-alasfar">
+    <link rel="me" href="https://mgzon.com">
+    <!-- IndexNow Verification -->
+    <meta name="indexnow" content="mgzon-cv-indexnow-2026-3b82f6a1">
+    <link rel="indexnow" href="https://elasfar.vercel.app/mgzon-cv-indexnow-2026-3b82f6a1.txt">
+
+    <!-- Lucide Icons + html2pdf -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- ============================================ -->
+    <!-- SEO Meta Tags -->
+    <!-- ============================================ -->
+    <title>Mark Al-Asfar | Senior Full-Stack Developer & Systems Architect</title>
+    <meta name="description"
+        content="Senior Full-Stack Developer with 5+ years experience building enterprise-grade platforms. Founder of MGzon ERP serving 10,000+ users. Expert in Linux, Node.js, React, Fintech, and System Architecture.">
+    <meta name="keywords"
+        content="Full-Stack Developer, Systems Architect, Node.js, React, TypeScript, Linux, Fintech, ERP, MGzon, Cairo, Egypt">
+    <meta name="author" content="Mark Al-Asfar">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://elasfar.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Mark Al-Asfar - Senior Full-Stack Developer">
+    <meta property="og:description"
+        content="Senior Full-Stack Developer & Systems Architect. Founder of MGzon ERP serving 10,000+ users.">
+    <meta property="og:image" content="https://elasfar.vercel.app/profile.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://elasfar.vercel.app/">
+    <meta property="profile:first_name" content="Mark">
+    <meta property="profile:last_name" content="Al-Asfar">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mark Al-Asfar - Senior Full-Stack Developer">
+    <meta name="twitter:description" content="Senior Full-Stack Developer & Systems Architect. Founder of MGzon ERP.">
+    <meta name="twitter:image" content="https://elasfar.vercel.app/profile.jpg">
+
+    <meta name="geo.places" content="Cairo, Egypt">
+    <meta name="geo.region" content="EG-C">
+    <link rel="icon" type="image/x-icon" href="./logo.svg">
 
     <style>
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
-
 
         body {
-
             font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-
             background-color: #e2e8f0;
-
             padding: 40px 20px;
-
             line-height: 1.5;
-
         }
-
-
 
         .cv-container {
-
-            max-width: 1100px;
-
+            max-width: 1300px;
             margin: 0 auto;
-
             background-color: white;
-
-            border-radius: 12px;
-
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
-
         }
 
-
-
-        /* Header with Background Image */
-
+        /* ========== HEADER ========== */
         .header {
-
             position: relative;
-
             padding: 60px 40px;
-
             text-align: center;
-
             color: white;
-
             background-image: url('./profile.jpg');
-
             background-size: cover;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-
+            background-position: center 30%;
         }
-
-
 
         .header::before {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             right: 0;
-
             bottom: 0;
-
-            background: rgba(0, 0, 0, 0.7);
-
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
             z-index: 1;
-
         }
 
-
-
-        .header > * {
-
+        .header>* {
             position: relative;
-
             z-index: 2;
-
         }
-
-
 
         .header h1 {
-
-            font-size: 48px;
-
+            font-size: 52px;
             margin-bottom: 8px;
-
-            letter-spacing: -0.5px;
-
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-
+            letter-spacing: -0.5px;
         }
 
-
+        .header .aka {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
 
         .header .subtitle {
-
             font-size: 20px;
-
             opacity: 0.95;
-
-            margin-bottom: 20px;
-
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-
+            margin-bottom: 24px;
         }
-
-
 
         .contact-info {
-
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
-            gap: 15px;
-
-            font-size: 14px;
-
-            margin-top: 15px;
-
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-
-
+        .contact-info a,
         .contact-info span {
-
-            background: rgba(255, 255, 255, 0.2);
-
-            backdrop-filter: blur(5px);
-
-            padding: 6px 16px;
-
-            border-radius: 30px;
-
-            font-weight: 500;
-
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
         }
 
-
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
 
         .social-links {
-
             display: flex;
-
             justify-content: center;
-
-            gap: 25px;
-
-            margin-top: 20px;
-
+            gap: 20px;
             flex-wrap: wrap;
-
+            margin-bottom: 25px;
         }
-
-
 
         .social-links a {
-
             color: white;
-
             text-decoration: none;
-
-            background: rgba(255, 255, 255, 0.15);
-
-            padding: 6px 18px;
-
+            background: rgba(255, 255, 255, 0.12);
+            padding: 6px 16px;
             border-radius: 30px;
-
             font-size: 13px;
-
-            transition: all 0.3s;
-
+            transition: all 0.2s;
             display: inline-flex;
-
             align-items: center;
-
             gap: 6px;
-
         }
-
-
 
         .social-links a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+        }
 
-            background: rgba(255, 255, 255, 0.3);
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 10px 24px;
+            border-radius: 40px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
             transform: translateY(-2px);
-
         }
 
-
-
-        /* Main Content */
-
+        /* ========== MAIN CONTENT ========== */
         .main-content {
-
             padding: 40px;
-
         }
-
-
 
         .section {
-
-            margin-bottom: 35px;
-
+            margin-bottom: 40px;
         }
-
-
 
         .section-title {
-
-            font-size: 24px;
-
+            font-size: 26px;
             font-weight: 700;
-
             color: #0f172a;
-
             border-bottom: 3px solid #3b82f6;
-
-            padding-bottom: 8px;
-
-            margin-bottom: 20px;
-
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-
-
 
         .summary-text {
-
             background-color: #f8fafc;
-
-            padding: 20px;
-
-            border-radius: 12px;
-
+            padding: 24px;
+            border-radius: 16px;
             border-left: 4px solid #3b82f6;
-
             color: #334155;
-
-            line-height: 1.6;
-
+            line-height: 1.7;
         }
-
-
 
         .skills-grid {
-
             display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-
         }
-
-
 
         .skill-category {
-
             background-color: #f8fafc;
-
-            padding: 18px;
-
-            border-radius: 12px;
-
+            padding: 20px;
+            border-radius: 16px;
             transition: all 0.2s;
-
         }
-
-
 
         .skill-category:hover {
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
         }
-
-
 
         .skill-category h3 {
-
-            color: #1e293b;
-
             font-size: 18px;
-
             margin-bottom: 12px;
-
             border-left: 3px solid #3b82f6;
-
             padding-left: 12px;
-
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-
-
-
-        .skill-category p {
-
-            color: #475569;
-
-            font-size: 14px;
-
-            line-height: 1.6;
-
-        }
-
-
 
         .project-card {
-
             background-color: #f8fafc;
-
-            padding: 20px;
-
-            border-radius: 12px;
-
+            padding: 24px;
+            border-radius: 16px;
             margin-bottom: 20px;
-
             transition: all 0.2s;
-
         }
-
-
 
         .project-card:hover {
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
         }
-
-
 
         .project-card h3 {
-
-            color: #0f172a;
-
             font-size: 20px;
-
             margin-bottom: 6px;
-
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-
-
 
         .project-date {
-
             color: #3b82f6;
-
             font-size: 13px;
-
             font-weight: 500;
-
-            margin-bottom: 12px;
-
+            margin-bottom: 14px;
         }
-
-
-
-        .project-desc {
-
-            color: #334155;
-
-            margin-bottom: 12px;
-
-            line-height: 1.5;
-
-        }
-
-
 
         .tech-stack {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 8px;
-
-            margin-top: 12px;
-
+            margin-top: 16px;
         }
-
-
 
         .tech-tag {
-
             background-color: #e2e8f0;
-
-            color: #1e293b;
-
             padding: 4px 12px;
-
             border-radius: 20px;
-
             font-size: 12px;
-
             font-weight: 500;
-
         }
-
-
 
         .achievement-list {
-
             list-style: none;
-
             margin-top: 12px;
-
         }
-
-
 
         .achievement-list li {
-
-            color: #475569;
-
-            font-size: 14px;
-
-            padding-left: 20px;
-
+            padding-left: 24px;
             position: relative;
-
             margin-bottom: 8px;
-
-            line-height: 1.5;
-
+            color: #475569;
         }
-
-
 
         .achievement-list li::before {
-
             content: "▹";
-
             position: absolute;
-
             left: 0;
-
             color: #3b82f6;
-
         }
-
-
 
         .two-columns {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
-            gap: 25px;
-
+            gap: 30px;
         }
 
+        /* ========== MODERN CLI CARD ========== */
+        .cli-modern-card {
+            background: linear-gradient(135deg, #0a0c10 0%, #0f1115 100%);
+            border-radius: 24px;
+            padding: 28px;
+            margin: 32px 0;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            transition: all 0.3s ease;
+        }
 
+        .cli-modern-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cli-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .cli-header-left h3 {
+            font-size: 22px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0 4px;
+        }
+
+        .cli-badge {
+            background: #3b82f6;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .cli-version {
+            font-size: 11px;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+
+        .cli-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 30px;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .cli-code-wrapper {
+            background: #1a1c22;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 14px 20px;
+            margin-bottom: 24px;
+            border: 1px solid #2d2f36;
+        }
+
+        .cli-code {
+            font-family: 'Fira Code', 'Monaco', monospace;
+            font-size: 14px;
+            color: #e2e8f0;
+            background: transparent;
+        }
+
+        .cli-copy-btn {
+            background: #2d2f36;
+            border: none;
+            color: #94a3b8;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .cli-copy-btn:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cli-downloads-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: #94a3b8;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cli-buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .cli-download-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: #1a1c22;
+            border: 1px solid #2d2f36;
+        }
+
+        .cli-download-btn .cli-file-size {
+            font-size: 10px;
+            opacity: 0.7;
+            margin-left: 4px;
+        }
+
+        .cli-download-btn.linux {
+            color: #facc15;
+        }
+
+        .cli-download-btn.linux:hover {
+            background: #facc15;
+            color: #0f1115;
+        }
+
+        .cli-download-btn.macos {
+            color: #94a3b8;
+        }
+
+        .cli-download-btn.macos:hover {
+            background: #94a3b8;
+            color: #0f1115;
+        }
+
+        .cli-download-btn.windows {
+            color: #3b82f6;
+        }
+
+        .cli-download-btn.windows:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cli-download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .cli-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 20px 0 16px;
+            padding-top: 20px;
+            border-top: 1px solid #2d2f36;
+        }
+
+        .cli-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .cli-feature i {
+            color: #3b82f6;
+        }
+
+        .cli-npm-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .cli-npm-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .cli-npm-link a:hover {
+            color: #3b82f6;
+        }
+
+        /* ========== SEARCH WIDGET ========== */
+        .search-widget {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 24px;
+            padding: 28px;
+            margin-top: 32px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .search-tabs-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 16px;
+        }
+
+        .search-mode-tab {
+            padding: 8px 22px;
+            background: transparent;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .search-mode-tab.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .search-input-group input {
+            flex: 1;
+            padding: 14px 22px;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-input-group input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-input-group button {
+            padding: 14px 28px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .search-input-group button:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .browser-tabs {
+            display: flex;
+            gap: 6px;
+            padding: 10px 14px;
+            background: #f1f5f9;
+            border-radius: 14px 14px 0 0;
+            flex-wrap: wrap;
+            overflow-x: auto;
+        }
+
+        .browser-tab {
+            padding: 6px 14px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .browser-tab.active {
+            background: white;
+            font-weight: 600;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .browser-frame {
+            background: white;
+            border-radius: 0 0 16px 16px;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            height: 550px;
+        }
+
+        .browser-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .image-card {
+            cursor: pointer;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f1f5f9;
+            transition: all 0.2s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .image-card p {
+            padding: 10px;
+            font-size: 12px;
+            color: #475569;
+        }
 
         .footer {
-
             background-color: #f1f5f9;
-
-            padding: 20px 40px;
-
+            padding: 24px;
             text-align: center;
-
             border-top: 1px solid #e2e8f0;
-
             font-size: 13px;
-
             color: #64748b;
-
         }
 
-
-
-        @media print {
-
-            body {
-
-                background-color: white;
-
-                padding: 0;
-
-                margin: 0;
-
-            }
-
-            .cv-container {
-
-                box-shadow: none;
-
-                border-radius: 0;
-
-            }
-
-            .header {
-
-                background-image: none !important;
-
-                background-color: #0f172a !important;
-
-                -webkit-print-color-adjust: exact;
-
-                print-color-adjust: exact;
-
-            }
-
-            .header::before {
-
-                display: none;
-
-            }
-
-            .contact-info span, .social-links a {
-
-                background: rgba(255, 255, 255, 0.2);
-
-                -webkit-print-color-adjust: exact;
-
-                print-color-adjust: exact;
-
-            }
-
-            .skill-category:hover, .project-card:hover {
-
-                transform: none;
-
-            }
-
+        /* ========== FULL BROWSER STYLES ========== */
+        .browser-widget {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            margin-top: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
+        .browser-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+
+        .browser-tabs {
+            display: flex;
+            gap: 4px;
+            flex: 1;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .browser-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .browser-tab.active {
+            background: white;
+            font-weight: 600;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .browser-tab .tab-favicon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .browser-tab .tab-close {
+            opacity: 0.6;
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+        }
+
+        .browser-tab .tab-close:hover {
+            opacity: 1;
+            color: #ef4444;
+        }
+
+        .new-tab-btn {
+            background: #e2e8f0;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+        }
+
+        .new-tab-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .tab-address-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            color: #475569;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .nav-btn.close:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .address-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 40px;
+            padding: 6px 12px;
+        }
+
+        .lock-icon {
+            width: 16px;
+            height: 16px;
+            color: #10b981;
+        }
+
+        .address-input {
+            flex: 1;
+            border: none;
+            font-size: 14px;
+            font-family: monospace;
+            outline: none;
+            background: transparent;
+        }
+
+        .go-btn {
+            background: #3b82f6;
+            border: none;
+            border-radius: 30px;
+            padding: 4px 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .go-btn:hover {
+            background: #2563eb;
+        }
+
+        .tab-controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .browser-frame {
+            height: 550px;
+            background: white;
+        }
+
+        .browser-content {
+            width: 100%;
+            height: 100%;
+        }
+
+        .browser-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: #64748b;
+            background: #f8fafc;
+        }
+
+        .welcome-screen i {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+            color: #3b82f6;
+        }
+
+        .welcome-screen h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .welcome-screen p {
+            margin-bottom: 24px;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-links a {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #3b82f6;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .quick-links a:hover {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
 
 
         @media (max-width: 768px) {
-
             .main-content {
-
                 padding: 24px;
-
             }
 
             .two-columns {
-
                 grid-template-columns: 1fr;
-
             }
 
             .header h1 {
-
-                font-size: 32px;
-
+                font-size: 36px;
             }
 
             .header {
-
                 padding: 40px 20px;
-
             }
-
         }
 
-    </style>
+        @media print {
 
+            .action-buttons,
+            .search-widget,
+            .cli-modern-card,
+            .browser-tabs {
+                display: none;
+            }
+
+            .header {
+                background-color: #0f172a !important;
+                background-image: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <div class="cv-container">
-
-        <!-- Header -->
-
+    <div class="cv-container" id="cv-content">
+        <!-- ========== HEADER ========== -->
         <div class="header">
-
-            <h1>Ibrahim ALASFAR</h1>
-
+            <h1>Mark Al-Asfar</h1>
+            <div class="aka">aka Ibrahim Alasfar</div>
             <div class="subtitle">Senior Full-Stack Developer & Systems Architect</div>
-
             <div class="contact-info">
-
-                <span>✉️ marklasfar@gmail.com</span>
-
-                <span>📱 +20 1212444617</span>
-
-                <span>📍 Cairo, Egypt</span>
-
-                <span>🐧 Linux · Terminal First</span>
-
+                <a href="mailto:marklasfar@gmail.com"><i data-lucide="mail"></i> marklasfar@gmail.com</a>
+                <a href="tel:+201212444617"><i data-lucide="phone"></i> +20 1212444617</a>
+                <span><i data-lucide="map-pin"></i> Cairo, Egypt</span>
+                <a href="https://mark-lasfar.github.io/mgzon-cli/" target="_blank"><i data-lucide="terminal"></i> MGzon
+                    CLI</a>
             </div>
-
             <div class="social-links">
-
-                <a href="https://github.com/Mark-Lasfar">💻 GitHub: /markalasfar</a>
-
-                <a href="#">🔗 LinkedIn: /in/mark-alasfar</a>
-
-                <a href="#">🌐 MGzon Platform</a>
-
+                <a href="https://github.com/Mark-Lasfar" target="_blank"><i data-lucide="github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/mark-alasfar" target="_blank"><i data-lucide="linkedin"></i>
+                    LinkedIn</a>
+                <a href="https://mgzon.com" target="_blank"><i data-lucide="globe"></i> MGzon Platform</a>
+                <a href="https://www.npmjs.com/package/@mgzon/cli" target="_blank"><i data-lucide="package"></i> npm i
+                    @mgzon/cli</a>
             </div>
-
+            <div class="action-buttons">
+                <button class="action-btn" id="downloadPDF"><i data-lucide="file-text"></i> Download PDF</button>
+            </div>
         </div>
-
-
 
         <div class="main-content">
-
-            <!-- Professional Summary -->
-
+            <!-- ========== PROFESSIONAL SUMMARY ========== -->
             <div class="section">
-
-                <h2 class="section-title">Professional Summary</h2>
-
+                <h2 class="section-title"><i data-lucide="user"></i> Professional Summary</h2>
                 <div class="summary-text">
-
-                    <strong>Senior Full-Stack Developer and Systems Architect</strong> with 5+ years of experience building enterprise-grade platforms from the ground up. 
-
-                    Founder of <strong>MGzon</strong>, a comprehensive ERP ecosystem serving 10,000+ users across e-commerce, fintech, HR, and real estate sectors. 
-
-                    Expert in Linux-based development, clean architecture, and scalable system design. Built production-ready fintech systems with PCI-DSS compliance, 
-
-                    custom monitoring infrastructure, and automated reporting engines.
-
+                    <strong>Senior Full-Stack Developer and Systems Architect</strong> with 5+ years experience building
+                    enterprise-grade platforms. Founder of <strong>MGzon</strong>, a comprehensive ERP ecosystem serving
+                    10,000+ users across e-commerce, fintech, HR, and real estate sectors. Expert in Linux-based
+                    development, clean architecture, and scalable system design. Built production-ready fintech systems
+                    with PCI-DSS compliance, custom monitoring infrastructure, and automated reporting engines.
                 </div>
-
             </div>
 
-
-
-            <!-- Technical Skills -->
-
+            <!-- ========== TECHNICAL SKILLS ========== -->
             <div class="section">
-
-                <h2 class="section-title">Technical Skills</h2>
-
+                <h2 class="section-title"><i data-lucide="code-2"></i> Technical Skills</h2>
                 <div class="skills-grid">
-
                     <div class="skill-category">
-
-                        <h3>Frontend Development</h3>
-
-                        <p>React.js, TypeScript, TailwindCSS, Next.js, PWA, Redux, Context API</p>
-
+                        <h3><i data-lucide="layout"></i> Frontend</h3>
+                        <p>React.js, TypeScript, TailwindCSS, Next.js, PWA, Redux</p>
                     </div>
-
                     <div class="skill-category">
-
-                        <h3>Backend Development</h3>
-
-                        <p>Node.js, Express.js, NestJS, RESTful APIs, GraphQL, Webhook Architecture, Microservices</p>
-
+                        <h3><i data-lucide="server"></i> Backend</h3>
+                        <p>Node.js, Express.js, NestJS, GraphQL, Microservices</p>
                     </div>
-
                     <div class="skill-category">
-
-                        <h3>Databases & Caching</h3>
-
-                        <p>PostgreSQL, MySQL, MongoDB, Redis, Prisma, TypeORM, Query Optimization, Replication</p>
-
+                        <h3><i data-lucide="database"></i> Databases</h3>
+                        <p>PostgreSQL, MySQL, MongoDB, Redis, Prisma, Query Optimization</p>
                     </div>
-
                     <div class="skill-category">
-
-                        <h3>DevOps & Linux</h3>
-
-                        <p>Debian, Ubuntu, Kali Linux, Bash Scripting, Terminal Mastery, Docker, Nginx, CI/CD, Git</p>
-
+                        <h3><i data-lucide="cloud"></i> DevOps & Linux</h3>
+                        <p>Debian, Ubuntu, Kali, Docker, Kubernetes, CI/CD, Git</p>
                     </div>
-
                     <div class="skill-category">
-
-                        <h3>System Architecture</h3>
-
-                        <p>Microservices, Event-Driven Architecture, Message Queues (BullMQ), Batch Processing, Distributed Systems</p>
-
+                        <h3><i data-lucide="git-branch"></i> System Architecture</h3>
+                        <p>Microservices, Event-Driven, BullMQ, Batch Processing</p>
                     </div>
-
                     <div class="skill-category">
-
-                        <h3>Security & Fintech</h3>
-
-                        <p>PCI-DSS Compliance, JWT, OAuth2, Encryption, Payment Gateway Integration, Digital Wallets, Fraud Detection</p>
-
+                        <h3><i data-lucide="shield"></i> Security & Fintech</h3>
+                        <p>PCI-DSS, JWT, OAuth2, Payment Gateways, Digital Wallets</p>
                     </div>
-
-                    <div class="skill-category">
-
-                        <h3>Monitoring & Observability</h3>
-
-                        <p>Custom Health Monitoring Systems, Centralized Logging, Performance Metrics, Alerting Infrastructure</p>
-
-                    </div>
-
-                    <div class="skill-category">
-
-                        <h3>Other Tools</h3>
-
-                        <p>Git/GitHub, Postman, VS Code, Vim, Jira, Agile/Scrum Methodologies</p>
-
-                    </div>
-
                 </div>
-
             </div>
 
-
-
-            <!-- Key Projects -->
-
+            <!-- ========== KEY PROJECTS ========== -->
             <div class="section">
-
-                <h2 class="section-title">Key Projects</h2>
-
-                
-
+                <h2 class="section-title"><i data-lucide="folder-git-2"></i> Key Projects</h2>
                 <div class="project-card">
-
-                    <h3>🏢 MGzon – Enterprise ERP Platform</h3>
-
+                    <h3><i data-lucide="building-2"></i> MGzon – Enterprise ERP Platform</h3>
                     <div class="project-date">Founder & Lead Architect | 2022 – Present</div>
-
-                    <div class="project-desc">
-
-                        Built a comprehensive all-in-one business management platform from scratch, serving multiple industries with 10,000+ active users:
-
-                    </div>
-
                     <ul class="achievement-list">
-
-                        <li><strong>Fintech Module:</strong> Complete digital wallet system with transactions, fees, withdrawals, reconciliation, and PCI-DSS compliant payment processing</li>
-
-                        <li><strong>E-Commerce Engine:</strong> Full-featured online store management with inventory, orders, shipping, and multi-vendor support</li>
-
-                        <li><strong>HR Management System:</strong> Employee records, payroll integration, attendance tracking, performance reviews</li>
-
-                        <li><strong>Real Estate & Inheritance System:</strong> Automated legal inheritance distribution engine with Excel export and full audit trails</li>
-
-                        <li><strong>Webhook Dispatcher:</strong> Event-driven webhook system for seamless third-party integrations</li>
-
-                        <li><strong>Health Monitoring:</strong> Custom observability infrastructure comparable to Datadog with real-time alerts</li>
-
+                        <li><strong>Fintech Module:</strong> Digital wallet system with transactions, reconciliation,
+                            PCI-DSS compliance</li>
+                        <li><strong>E-Commerce Engine:</strong> Online store management with inventory, orders,
+                            multi-vendor</li>
+                        <li><strong>HR System:</strong> Employee records, payroll, attendance, performance reviews</li>
+                        <li><strong>Inheritance System:</strong> Automated legal distribution engine with Excel export
+                        </li>
+                        <li><strong>Health Monitoring:</strong> Custom observability with real-time alerts</li>
                     </ul>
-
-                    <div class="tech-stack">
-
-                        <span class="tech-tag">TypeScript</span>
-
-                        <span class="tech-tag">Node.js</span>
-
-                        <span class="tech-tag">React</span>
-
-                        <span class="tech-tag">PostgreSQL</span>
-
-                        <span class="tech-tag">Redis</span>
-
-                        <span class="tech-tag">Docker</span>
-
-                        <span class="tech-tag">Linux</span>
-
-                        <span class="tech-tag">BullMQ</span>
-
-                    </div>
-
+                    <div class="tech-stack"><span class="tech-tag">TypeScript</span><span
+                            class="tech-tag">Node.js</span><span class="tech-tag">React</span><span
+                            class="tech-tag">PostgreSQL</span><span class="tech-tag">Redis</span><span
+                            class="tech-tag">Docker</span></div>
                 </div>
-
-
-
                 <div class="project-card">
-
-                    <h3>📊 Inheritance Distribution Engine</h3>
-
+                    <h3><i data-lucide="chart-pie"></i> Inheritance Distribution Engine</h3>
                     <div class="project-date">Independent Project | 2023</div>
-
-                    <div class="project-desc">
-
-                        Developed a sophisticated inheritance calculation system that processes complex legal cases under Islamic law:
-
-                    </div>
-
                     <ul class="achievement-list">
-
-                        <li>Automatically distributes shares according to heir relationships with 100% accuracy</li>
-
-                        <li>Generates detailed Excel reports with full audit trails and legal documentation</li>
-
-                        <li>Provides admin dashboard for data entry, validation, and case management</li>
-
-                        <li>Handles edge cases including multiple spouses, half-siblings, and missing heirs</li>
-
+                        <li>Automatic share distribution under Islamic law with 100% accuracy</li>
+                        <li>Excel reports with full audit trails</li>
+                        <li>Admin dashboard for case management</li>
                     </ul>
-
-                    <div class="tech-stack">
-
-                        <span class="tech-tag">TypeScript</span>
-
-                        <span class="tech-tag">Node.js</span>
-
-                        <span class="tech-tag">React</span>
-
-                        <span class="tech-tag">ExcelJS</span>
-
-                        <span class="tech-tag">PDF Generation</span>
-
-                    </div>
-
                 </div>
-
-
-
-                <div class="project-card">
-
-                    <h3>📈 Custom Health Monitoring & Logging System</h3>
-
-                    <div class="project-date">Architecture Design | 2024</div>
-
-                    <div class="project-desc">
-
-                        Designed and implemented a production-ready observability infrastructure:
-
-                    </div>
-
-                    <ul class="achievement-list">
-
-                        <li>Real-time health checks for all microservices with automatic recovery</li>
-
-                        <li>Centralized logging with search, filtering, and export capabilities</li>
-
-                        <li>Automated alerting based on configurable thresholds (Slack, Email, SMS)</li>
-
-                        <li>Performance metrics collection and visualization dashboards</li>
-
-                        <li>99.9% uptime achieved through proactive monitoring</li>
-
-                    </ul>
-
-                    <div class="tech-stack">
-
-                        <span class="tech-tag">Node.js</span>
-
-                        <span class="tech-tag">Redis</span>
-
-                        <span class="tech-tag">Event-Driven</span>
-
-                        <span class="tech-tag">REST API</span>
-
-                        <span class="tech-tag">WebSockets</span>
-
-                    </div>
-
-                </div>
-
             </div>
 
-
-
-            <!-- Key Achievements & Technical Philosophy -->
-
+            <!-- ========== KEY ACHIEVEMENTS & PHILOSOPHY ========== -->
             <div class="two-columns">
-
                 <div class="section">
-
-                    <h2 class="section-title">🏆 Key Achievements</h2>
-
+                    <h2 class="section-title"><i data-lucide="trophy"></i> Key Achievements</h2>
                     <ul class="achievement-list">
-
-                        <li>Architected scalable batch processing system handling 100,000+ daily transactions</li>
-
-                        <li>Implemented comprehensive error handling reducing production incidents by 85%</li>
-
-                        <li>Built monitoring system comparable to Datadog with 60% cost savings</li>
-
-                        <li>Created automated Excel reporting saving 20+ hours weekly for finance teams</li>
-
-                        <li>Designed event-driven webhook architecture processing 50,000+ events daily</li>
-
-                        <li>Optimized database queries achieving 300% performance improvement</li>
-
-                        <li>Led development of PCI-DSS compliant payment system with zero security incidents</li>
-
+                        <li>Batch processing: 100,000+ daily transactions</li>
+                        <li>85% reduction in production incidents</li>
+                        <li>60% cost savings vs Datadog</li>
+                        <li>300% query performance improvement</li>
                     </ul>
-
                 </div>
-
-
-
                 <div class="section">
-
-                    <h2 class="section-title">⚡ Technical Philosophy</h2>
-
+                    <h2 class="section-title"><i data-lucide="zap"></i> Technical Philosophy</h2>
                     <ul class="achievement-list">
-
-                        <li><strong>Linux-first development:</strong> Daily driver on Debian/Kali/Ubuntu, terminal-centric workflow, bash automation expert</li>
-
-                        <li><strong>Clean architecture:</strong> Emphasis on separation of concerns, maintainability, and testability</li>
-
-                        <li><strong>Scalability by design:</strong> Build systems that can handle 10x growth without refactoring</li>
-
-                        <li><strong>Problem-solving mindset:</strong> Create comprehensive solutions that eliminate repetitive manual work</li>
-
-                        <li><strong>Documentation matters:</strong> Write code that tells a story and docs that save hours of onboarding time</li>
-
-                        <li><strong>Security first:</strong> Implement security at every layer, not as an afterthought</li>
-
+                        <li><strong>Linux-first:</strong> Debian/Kali/Ubuntu, terminal-centric</li>
+                        <li><strong>Clean architecture:</strong> Separation of concerns, maintainability</li>
+                        <li><strong>Scalability:</strong> Build for 10x growth</li>
+                        <li><strong>Security first:</strong> Implement at every layer</li>
                     </ul>
-
                 </div>
-
             </div>
 
-
-
-            <!-- Experience & Education -->
-
-            <div class="two-columns">
-
-                <div class="section">
-
-                    <h2 class="section-title">💼 Professional Experience</h2>
-
-                    <div class="project-card" style="margin-bottom: 15px;">
-
-                        <h3>Founder & Lead Developer</h3>
-
-                        <div class="project-date">MGzon | 2022 – Present</div>
-
-                        <ul class="achievement-list">
-
-                            <li>Built and scaled platform from 0 to 10,000+ users across 5 countries</li>
-
-                            <li>Managed full development lifecycle from requirements to deployment</li>
-
-                            <li>Hired and mentored junior developers</li>
-
-                            <li>Architected microservices infrastructure handling 1M+ monthly requests</li>
-
-                        </ul>
-
+            <!-- ========== MODERN CLI CARD ========== -->
+            <div class="cli-modern-card">
+                <div class="cli-header">
+                    <div class="cli-header-left">
+                        <span class="cli-badge">✨ Official CLI</span>
+                        <h3><i data-lucide="terminal"></i> MGzon CLI</h3>
+                        <p class="cli-version">v1.0.0 · Latest</p>
                     </div>
-
-                    <div class="project-card" style="margin-bottom: 0;">
-
-                        <h3>Freelance Full-Stack Developer</h3>
-
-                        <div class="project-date">2020 – 2022</div>
-
-                        <ul class="achievement-list">
-
-                            <li>Delivered 15+ custom web applications for clients across MENA region</li>
-
-                            <li>Specialized in e-commerce platforms and business management systems</li>
-
-                            <li>Provided technical consulting and system architecture design</li>
-
-                        </ul>
-
+                    <div class="cli-header-right">
+                        <span class="cli-status"><i data-lucide="check-circle"></i> Production Ready</span>
                     </div>
-
                 </div>
-
-
-
-                <div class="section">
-
-                    <h2 class="section-title">🎓 Education & Certifications</h2>
-
-                    <div class="project-card" style="margin-bottom: 15px;">
-
-                        <h3>Self-Taught Developer</h3>
-
-                        <div class="project-date">Continuous learning since 2020</div>
-
-                        <ul class="achievement-list">
-
-                            <li>System Architecture & Design Patterns (Advanced)</li>
-
-                            <li>Database Optimization & Scaling (Advanced)</li>
-
-                            <li>Linux Systems Administration (Expert)</li>
-
-                            <li>Fintech & Payment Integration (PCI-DSS Certified)</li>
-
-                        </ul>
-
-                    </div>
-
-                    <div class="project-card" style="margin-bottom: 0;">
-
-                        <h3>Certifications</h3>
-
-                        <ul class="achievement-list">
-
-                            <li>Meta Backend Developer Professional Certificate</li>
-
-                            <li>Linux Foundation Certified System Administrator (LFCS)</li>
-
-                            <li>Node.js Security Workshop</li>
-
-                        </ul>
-
-                    </div>
-
+                <div class="cli-code-wrapper">
+                    <code class="cli-code">npm install -g @mgzon/cli</code>
+                    <button class="cli-copy-btn" onclick="copyToClipboard('npm install -g @mgzon/cli', this)">
+                        <i data-lucide="copy"></i> Copy
+                    </button>
                 </div>
-
+                <div class="cli-downloads">
+                    <p class="cli-downloads-title"><i data-lucide="download"></i> Direct Downloads</p>
+                    <div class="cli-buttons-grid">
+                        <a href="https://github.com/Mark-Lasfar/mgzon-cli/releases/download/v1.0.0/mgzon-linux"
+                            class="cli-download-btn linux" target="_blank"><i data-lucide="tux"></i> Linux <span
+                                class="cli-file-size">~12 MB</span></a>
+                        <a href="https://github.com/Mark-Lasfar/mgzon-cli/releases/download/v1.0.0/mgzon-macos"
+                            class="cli-download-btn macos" target="_blank"><i data-lucide="apple"></i> macOS <span
+                                class="cli-file-size">~14 MB</span></a>
+                        <a href="https://github.com/Mark-Lasfar/mgzon-cli/releases/download/v1.0.0/mgzon-win.exe"
+                            class="cli-download-btn windows" target="_blank"><i data-lucide="windows"></i> Windows <span
+                                class="cli-file-size">~11 MB</span></a>
+                    </div>
+                </div>
+                <div class="cli-features">
+                    <div class="cli-feature"><i data-lucide="zap"></i><span>Lightning Fast</span></div>
+                    <div class="cli-feature"><i data-lucide="shield"></i><span>Secure</span></div>
+                    <div class="cli-feature"><i data-lucide="globe"></i><span>Cross-Platform</span></div>
+                    <div class="cli-feature"><i data-lucide="git-branch"></i><span>Open Source</span></div>
+                </div>
+                <div class="cli-npm-link"><a href="https://www.npmjs.com/package/@mgzon/cli" target="_blank"><i
+                            data-lucide="package"></i> View on npm <i data-lucide="external-link"></i></a></div>
             </div>
 
+            <!-- ========== SEARCH WIDGET ========== -->
+            <!-- ========== FULL BROWSER WITH ADDRESS BAR ========== -->
+            <div class="browser-widget">
+                <div class="browser-toolbar">
+                    <div class="browser-tabs" id="browserTabs"></div>
+                    <button class="new-tab-btn" id="newTabBtn"><i data-lucide="plus"></i></button>
+                </div>
 
-
-            <!-- Languages & Additional Info -->
-
-            <div class="two-columns">
-
-                <div class="section">
-
-                    <h2 class="section-title">🌐 Languages</h2>
-
-                    <div class="project-card" style="margin-bottom: 0;">
-
-                        <ul class="achievement-list">
-
-                            <li><strong>Arabic:</strong> Native (C2)</li>
-
-                            <li><strong>English:</strong> Professional Working Proficiency (C1) – Technical documentation, client communication, code comments</li>
-
-                        </ul>
-
+                <div id="activeTabBar" class="tab-address-bar" style="display: none;">
+                    <div class="nav-controls">
+                        <button id="backBtn" class="nav-btn" disabled><i data-lucide="arrow-left"></i></button>
+                        <button id="forwardBtn" class="nav-btn" disabled><i data-lucide="arrow-right"></i></button>
+                        <button id="refreshBtn" class="nav-btn"><i data-lucide="rotate-ccw"></i></button>
                     </div>
-
-                </div>
-
-
-
-                <div class="section">
-
-                    <h2 class="section-title">🎯 Interests & Passions</h2>
-
-                    <div class="project-card" style="margin-bottom: 0;">
-
-                        <ul class="achievement-list">
-
-                            <li>🐧 Linux & Open Source Ecosystem – Active contributor to OSS projects</li>
-
-                            <li>🏗️ System Architecture & Distributed Systems Design</li>
-
-                            <li>⌨️ Terminal Automation – Build CLI tools to eliminate repetitive tasks</li>
-
-                            <li>📚 Technical Writing & Knowledge Sharing</li>
-
-                            <li>🚀 Building products that solve real-world problems</li>
-
-                            <li>💡 Fun fact: I built an entire inheritance system just to avoid using Excel 😉</li>
-
-                        </ul>
-
+                    <div class="address-container">
+                        <i data-lucide="lock" class="lock-icon"></i>
+                        <input type="text" id="addressInput" class="address-input" placeholder="Enter URL or search...">
+                        <button id="goBtn" class="go-btn"><i data-lucide="arrow-right"></i></button>
                     </div>
-
+                    <div class="tab-controls">
+                        <button id="openExternalBtn" class="nav-btn"><i data-lucide="external-link"></i></button>
+                        <button id="closeTabBtn" class="nav-btn close"><i data-lucide="x"></i></button>
+                    </div>
                 </div>
 
-            </div>
-
-
-
-            <!-- Open Source & Community -->
-
-            <div class="section">
-
-                <h2 class="section-title">🌍 Open Source & Community</h2>
-
-                <div class="summary-text">
-
-                    <ul class="achievement-list" style="margin-top: 0;">
-
-                        <li>Active contributor to open-source Node.js and TypeScript projects</li>
-
-                        <li>Created and maintained 3 npm packages with 500+ weekly downloads</li>
-
-                        <li>Regular mentor for junior developers in local tech communities</li>
-
-                        <li>Write technical articles about system architecture and Linux development</li>
-
-                    </ul>
-
+                <div class="browser-frame">
+                    <div id="browserContent" class="browser-content">
+                        <div class="welcome-screen">
+                            <i data-lucide="compass"></i>
+                            <h3>MGzon Browser</h3>
+                            <p>Search Google or enter a URL above</p>
+                            <div class="quick-links">
+                                <a href="#" onclick="loadUrl('https://github.com/Mark-Lasfar')">GitHub</a>
+                                <a href="#" onclick="loadUrl('https://linkedin.com/in/mark-alasfar')">LinkedIn</a>
+                                <a href="#" onclick="loadUrl('https://mgzon.com')">MGzon</a>
+                                <a href="#" onclick="loadUrl('https://www.npmjs.com/package/@mgzon/cli')">npm CLI</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
-
 
         <div class="footer">
-
             <p>⚡ Terminal-first developer | 🐧 Linux enthusiast | 🚀 Building systems that matter</p>
-
-            <p style="margin-top: 8px; font-size: 11px;">📅 Last updated: March 2026 | 🌟 Available for full-time opportunities or consulting</p>
-
+            <p>📅 March 2026 | 🌟 Available for opportunities</p>
         </div>
-
     </div>
 
+    <script>
+        lucide.createIcons();
+
+        // ========== PDF Download ==========
+        document.getElementById('downloadPDF').addEventListener('click', () => {
+            html2pdf().from(document.getElementById('cv-content')).set({
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: 'Mark_Al-Asfar_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 }
+            }).save();
+        });
+
+        // ========== Copy to clipboard ==========
+        window.copyToClipboard = function (text, element) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element;
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check"></i> Copied!';
+                lucide.createIcons();
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    lucide.createIcons();
+                }, 2000);
+            }).catch(() => {
+                alert('Failed to copy');
+            });
+        };
+
+        // ========== FULL BROWSER WITH HISTORY ==========
+        let tabs = [];
+        let activeTabId = null;
+        let tabHistory = {};
+
+        // Initialize Browser
+        function initBrowser() {
+            renderBrowserTabs();
+            document.getElementById('newTabBtn')?.addEventListener('click', () => createNewTab());
+            document.getElementById('backBtn')?.addEventListener('click', goBack);
+            document.getElementById('forwardBtn')?.addEventListener('click', goForward);
+            document.getElementById('refreshBtn')?.addEventListener('click', refreshCurrentTab);
+            document.getElementById('goBtn')?.addEventListener('click', () => {
+                const url = document.getElementById('addressInput').value;
+                navigateToUrl(url);
+            });
+            document.getElementById('addressInput')?.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') navigateToUrl(e.target.value);
+            });
+            document.getElementById('openExternalBtn')?.addEventListener('click', openInNewWindow);
+            document.getElementById('closeTabBtn')?.addEventListener('click', closeCurrentTab);
+
+            createNewTab('about:welcome');
+        }
+
+        function createNewTab(url = 'about:welcome') {
+            const tabId = Date.now();
+            tabs.push({ id: tabId, title: 'New Tab', url: url });
+            tabHistory[tabId] = { backStack: [], forwardStack: [], currentUrl: url };
+            activeTabId = tabId;
+            renderBrowserTabs();
+            loadUrlInTab(tabId, url);
+        }
+
+        function renderBrowserTabs() {
+            const container = document.getElementById('browserTabs');
+            if (!container) return;
+            container.innerHTML = tabs.map(tab => `
+            <button class="browser-tab ${activeTabId === tab.id ? 'active' : ''}" data-id="${tab.id}">
+                <i data-lucide="file-text" class="tab-favicon"></i>
+                <span>${tab.title.length > 20 ? tab.title.slice(0, 20) + '...' : tab.title}</span>
+                <i data-lucide="x" class="tab-close" onclick="event.stopPropagation(); closeBrowserTab(${tab.id})"></i>
+            </button>
+        `).join('');
+            lucide.createIcons();
+            document.querySelectorAll('.browser-tab').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('tab-close')) {
+                        activeTabId = parseInt(btn.dataset.id);
+                        renderBrowserTabs();
+                        const tab = tabs.find(t => t.id === activeTabId);
+                        if (tab) loadUrlInTab(activeTabId, tab.url);
+                    }
+                });
+            });
+        }
+
+        function loadUrlInTab(tabId, url) {
+            const tab = tabs.find(t => t.id === tabId);
+            if (!tab) return;
+
+            if (url === 'about:welcome') {
+                document.getElementById('browserContent').innerHTML = `
+                <div class="welcome-screen">
+                    <i data-lucide="compass"></i>
+                    <h3>MGzon Browser</h3>
+                    <p>Search Google or enter a URL above</p>
+                    <div class="quick-links">
+                        <a href="#" onclick="loadUrl('https://github.com/Mark-Lasfar')">GitHub</a>
+                        <a href="#" onclick="loadUrl('https://linkedin.com/in/mark-alasfar')">LinkedIn</a>
+                        <a href="#" onclick="loadUrl('https://mgzon.com')">MGzon</a>
+                        <a href="#" onclick="loadUrl('https://www.npmjs.com/package/@mgzon/cli')">npm CLI</a>
+                    </div>
+                </div>
+            `;
+                lucide.createIcons();
+                document.getElementById('activeTabBar').style.display = 'none';
+                tab.title = 'New Tab';
+                tab.url = 'about:welcome';
+                renderBrowserTabs();
+                return;
+            }
+
+            let finalUrl = url;
+            if (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('about:')) {
+                if (url.includes('.')) finalUrl = 'https://' + url;
+                else finalUrl = `https://www.google.com/search?q=${encodeURIComponent(url)}`;
+            }
+
+            document.getElementById('browserContent').innerHTML = `<iframe class="iframe-container" src="${finalUrl}" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals allow-top-navigation"></iframe>`;
+            document.getElementById('activeTabBar').style.display = 'flex';
+            document.getElementById('addressInput').value = finalUrl;
+
+            tab.title = finalUrl.replace(/^https?:\/\//, '').split('/')[0];
+            tab.url = finalUrl;
+            renderBrowserTabs();
+            updateNavButtons(tabId);
+
+            const iframe = document.querySelector('#browserContent iframe');
+            if (iframe) {
+                iframe.onload = () => {
+                    try {
+                        const iframeUrl = iframe.contentWindow.location.href;
+                        if (iframeUrl !== finalUrl) {
+                            document.getElementById('addressInput').value = iframeUrl;
+                            tab.url = iframeUrl;
+                            tab.title = iframeUrl.replace(/^https?:\/\//, '').split('/')[0];
+                            renderBrowserTabs();
+                            tabHistory[tabId].currentUrl = iframeUrl;
+                        }
+                    } catch (e) { /* cross-origin */ }
+                };
+            }
+        }
+
+        function updateNavButtons(tabId) {
+            const history = tabHistory[tabId];
+            const backBtn = document.getElementById('backBtn');
+            const forwardBtn = document.getElementById('forwardBtn');
+            if (backBtn) backBtn.disabled = !history || history.backStack.length === 0;
+            if (forwardBtn) forwardBtn.disabled = !history || history.forwardStack.length === 0;
+        }
+
+        function navigateToUrl(input) {
+            if (!activeTabId) return;
+            const tab = tabs.find(t => t.id === activeTabId);
+            if (!tab) return;
+
+            if (tab.url && tab.url !== 'about:welcome') {
+                tabHistory[activeTabId].backStack.push(tabHistory[activeTabId].currentUrl || tab.url);
+                tabHistory[activeTabId].forwardStack = [];
+            }
+            updateNavButtons(activeTabId);
+            loadUrlInTab(activeTabId, input);
+        }
+
+        function goBack() {
+            if (!activeTabId) return;
+            const history = tabHistory[activeTabId];
+            if (history.backStack.length === 0) return;
+            const prevUrl = history.backStack.pop();
+            history.forwardStack.push(history.currentUrl);
+            loadUrlInTab(activeTabId, prevUrl);
+            updateNavButtons(activeTabId);
+        }
+
+        function goForward() {
+            if (!activeTabId) return;
+            const history = tabHistory[activeTabId];
+            if (history.forwardStack.length === 0) return;
+            const nextUrl = history.forwardStack.pop();
+            history.backStack.push(history.currentUrl);
+            loadUrlInTab(activeTabId, nextUrl);
+            updateNavButtons(activeTabId);
+        }
+
+        function refreshCurrentTab() {
+            if (!activeTabId) return;
+            const tab = tabs.find(t => t.id === activeTabId);
+            if (tab && tab.url !== 'about:welcome') loadUrlInTab(activeTabId, tab.url);
+        }
+
+        function openInNewWindow() {
+            const url = document.getElementById('addressInput')?.value;
+            if (url && url !== 'about:welcome') window.open(url, '_blank');
+        }
+
+        function closeBrowserTab(tabId) {
+            const index = tabs.findIndex(t => t.id === tabId);
+            if (index === -1) return;
+            tabs.splice(index, 1);
+            delete tabHistory[tabId];
+            if (tabs.length === 0) {
+                createNewTab();
+            } else if (activeTabId === tabId) {
+                activeTabId = tabs[0].id;
+                const tab = tabs[0];
+                loadUrlInTab(activeTabId, tab.url);
+            }
+            renderBrowserTabs();
+        }
+
+        function closeCurrentTab() {
+            if (activeTabId) closeBrowserTab(activeTabId);
+        }
+
+        window.loadUrl = function (url) {
+            navigateToUrl(url);
+        };
+
+        // Start the browser
+        initBrowser();
+
+        // ========== IndexNow Auto-Submit ==========
+        async function submitToIndexNow(urls) {
+            const key = 'mgzon-cv-indexnow-2026-3b82f6a1';
+            const keyLocation = `https://elasfar.vercel.app/${key}.txt`;
+            const payload = { host: 'elasfar.vercel.app', key: key, keyLocation: keyLocation, urlList: Array.isArray(urls) ? urls : [urls] };
+            try {
+                await fetch('https://api.indexnow.org/IndexNow', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                console.log('✅ IndexNow submitted');
+            } catch (e) { console.log('IndexNow error:', e); }
+        }
+        window.addEventListener('load', () => submitToIndexNow('https://elasfar.vercel.app/'));
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mgzon.com/#organization",
+      "name": "MGzon",
+      "alternateName": ["MGzon Platform", "MGzon ERP"],
+      "url": "https://mgzon.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://elasfar.vercel.app/logo.svg",
+        "width": 1200,
+        "height": 630
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://raw.githubusercontent.com/mg-cli/mgzon-docs/refs/heads/main/platform-docs/assets/images/logo.png",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Enterprise ERP ecosystem integrating e-commerce, fintech, HR, real estate management, and inheritance distribution. Serving 10,000+ users across 5 countries.",
+      "foundingDate": "2022",
+      "foundingLocation": "Cairo, Egypt",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 5
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Egypt",
+        "containedInPlace": {
+          "@type": "Place",
+          "name": "MENA Region"
+        }
+      },
+      "knowsAbout": ["ERP", "Fintech", "E-commerce", "HR Management", "Real Estate", "Inheritance System", "System Architecture"],
+      "sameAs": [
+        "https://github.com/mg-cli",
+        "https://www.npmjs.com/package/@mgzon/cli",
+        "https://mark-lasfar.github.io/mgzon-cli/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "marklasfar@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": ["Arabic", "English"]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://elasfar.vercel.app/#person",
+      "name": "Mark Al-Asfar",
+      "alternateName": ["Ibrahim Alasfar", "Mark Alasfar", "Mark Al-Asfar"],
+      "givenName": "Ibrahim",
+      "familyName": "Alasfar",
+      "email": "marklasfar@gmail.com",
+      "telephone": "+201212444617",
+      "jobTitle": "Senior Full-Stack Developer & Systems Architect",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://elasfar.vercel.app/profile.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      "sameAs": [
+        "https://github.com/Mark-Lasfar",
+        "https://linkedin.com/in/mark-alasfar",
+        "https://www.npmjs.com/~mark-alasfar"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "MGzon",
+        "url": "https://mgzon.com"
+      },
+      "founder": {
+        "@type": "Organization",
+        "name": "MGzon",
+        "url": "https://mgzon.com"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Self-Taught Developer",
+        "description": "Continuous learning since 2020"
+      },
+      "knowsAbout": [
+        "Full-Stack Development",
+        "System Architecture",
+        "Linux Administration",
+        "Fintech",
+        "Node.js",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Docker",
+        "Microservices",
+        "Event-Driven Architecture",
+        "BullMQ",
+        "PCI-DSS Compliance"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Arabic",
+          "alternateName": "ar"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Meta Backend Developer Professional Certificate",
+          "url": "https://www.coursera.org/account/accomplishments/professional-cert/XXXXXX"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Linux Foundation Certified System Administrator (LFCS)",
+          "url": "https://training.linuxfoundation.org/certification/lfcs/"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cairo",
+        "addressCountry": "EG"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Egypt"
+      },
+      "description": "Senior Full-Stack Developer with 5+ years experience building enterprise-grade platforms. Founder of MGzon ERP serving 10,000+ users. Expert in Linux-based development, clean architecture, and scalable system design.",
+      "url": "https://elasfar.vercel.app/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://elasfar.vercel.app/#website",
+      "url": "https://elasfar.vercel.app/",
+      "name": "Mark Al-Asfar CV & Portfolio",
+      "alternateName": ["Mark Alasfar CV", "Ibrahim Alasfar Portfolio"],
+      "description": "Professional CV and portfolio of Mark Al-Asfar, Senior Full-Stack Developer and Founder of MGzon.",
+      "author": {
+        "@id": "https://elasfar.vercel.app/#person"
+      },
+      "inLanguage": ["ar", "en"],
+      "copyrightYear": "2026",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "Mark Al-Asfar"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://elasfar.vercel.app/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.npmjs.com/package/@mgzon/cli#software",
+      "name": "@mgzon/cli",
+      "alternateName": ["MGzon CLI", "mgzon-cli"],
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": ["Linux", "macOS", "Windows"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly"
+      },
+      "description": "Official MGzon CLI for managing MGzon platform directly from terminal. Features: wallet management, transaction tracking, system monitoring, and automation tools.",
+      "downloadUrl": "https://github.com/Mark-Lasfar/mgzon-cli/releases",
+      "softwareVersion": "1.0.0",
+      "screenshot": "https://raw.githubusercontent.com/mg-cli/mgzon-docs/refs/heads/main/platform-docs/assets/images/cli-demo.png",
+      "author": {
+        "@type": "Person",
+        "name": "Mark Al-Asfar",
+        "url": "https://elasfar.vercel.app/"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "MGzon",
+        "url": "https://mgzon.com"
+      },
+      "keywords": "cli, terminal, mgzon, erp, fintech, developer-tools"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://mgzon.com/#product",
+      "name": "MGzon ERP Platform",
+      "description": "Complete enterprise resource planning solution with fintech, e-commerce, HR, real estate, and inheritance management modules.",
+      "brand": {
+        "@type": "Brand",
+        "name": "MGzon",
+        "logo": "https://elasfar.vercel.app/logo.svg"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free for early adopters, enterprise plans available"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  ]
+}
+</script>
 </body>
 
-  </html>
+</html>
