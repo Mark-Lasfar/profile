@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Alasfar - Senior Full-Stack Developer CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background-color: #e2e8f0;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header with Background Image */
+        .header {
+            position: relative;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            background-image: url('./profile.html');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: #f8fafc;
+            padding: 18px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            color: #1e293b;
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-left: 3px solid #3b82f6;
+            padding-left: 12px;
+        }
+
+        .skill-category p {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card h3 {
+            color: #0f172a;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .project-date {
+            color: #3b82f6;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            color: #334155;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tech-tag {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .achievement-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .achievement-list li {
+            color: #475569;
+            font-size: 14px;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .achievement-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .footer {
+            background-color: #f1f5f9;
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header {
+                background-image: none !important;
+                background-color: #0f172a !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .header::before {
+                display: none;
+            }
+            .contact-info span, .social-links a {
+                background: rgba(255, 255, 255, 0.2);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .skill-category:hover, .project-card:hover {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 24px;
+            }
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 32px;
+            }
+            .header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Ibrahim ALASFAR</h1>
+            <div class="subtitle">Senior Full-Stack Developer & Systems Architect</div>
+            <div class="contact-info">
+                <span>✉️ marklasfar@gmail.com</span>
+                <span>📱 +20 1212444617</span>
+                <span>📍 Cairo, Egypt</span>
+                <span>🐧 Linux · Terminal First</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Mark-Lasfar">💻 GitHub: /markalasfar</a>
+                <a href="#">🔗 LinkedIn: /in/mark-alasfar</a>
+                <a href="#">🌐 MGzon Platform</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Professional Summary -->
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary-text">
+                    <strong>Senior Full-Stack Developer and Systems Architect</strong> with 5+ years of experience building enterprise-grade platforms from the ground up. 
+                    Founder of <strong>MGzon</strong>, a comprehensive ERP ecosystem serving 10,000+ users across e-commerce, fintech, HR, and real estate sectors. 
+                    Expert in Linux-based development, clean architecture, and scalable system design. Built production-ready fintech systems with PCI-DSS compliance, 
+                    custom monitoring infrastructure, and automated reporting engines.
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <p>React.js, TypeScript, TailwindCSS, Next.js, PWA, Redux, Context API</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <p>Node.js, Express.js, NestJS, RESTful APIs, GraphQL, Webhook Architecture, Microservices</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Caching</h3>
+                        <p>PostgreSQL, MySQL, MongoDB, Redis, Prisma, TypeORM, Query Optimization, Replication</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & Linux</h3>
+                        <p>Debian, Ubuntu, Kali Linux, Bash Scripting, Terminal Mastery, Docker, Nginx, CI/CD, Git</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>System Architecture</h3>
+                        <p>Microservices, Event-Driven Architecture, Message Queues (BullMQ), Batch Processing, Distributed Systems</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security & Fintech</h3>
+                        <p>PCI-DSS Compliance, JWT, OAuth2, Encryption, Payment Gateway Integration, Digital Wallets, Fraud Detection</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Monitoring & Observability</h3>
+                        <p>Custom Health Monitoring Systems, Centralized Logging, Performance Metrics, Alerting Infrastructure</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Other Tools</h3>
+                        <p>Git/GitHub, Postman, VS Code, Vim, Jira, Agile/Scrum Methodologies</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Projects -->
+            <div class="section">
+                <h2 class="section-title">Key Projects</h2>
+                
+                <div class="project-card">
+                    <h3>🏢 MGzon – Enterprise ERP Platform</h3>
+                    <div class="project-date">Founder & Lead Architect | 2022 – Present</div>
+                    <div class="project-desc">
+                        Built a comprehensive all-in-one business management platform from scratch, serving multiple industries with 10,000+ active users:
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>Fintech Module:</strong> Complete digital wallet system with transactions, fees, withdrawals, reconciliation, and PCI-DSS compliant payment processing</li>
+                        <li><strong>E-Commerce Engine:</strong> Full-featured online store management with inventory, orders, shipping, and multi-vendor support</li>
+                        <li><strong>HR Management System:</strong> Employee records, payroll integration, attendance tracking, performance reviews</li>
+                        <li><strong>Real Estate & Inheritance System:</strong> Automated legal inheritance distribution engine with Excel export and full audit trails</li>
+                        <li><strong>Webhook Dispatcher:</strong> Event-driven webhook system for seamless third-party integrations</li>
+                        <li><strong>Health Monitoring:</strong> Custom observability infrastructure comparable to Datadog with real-time alerts</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">BullMQ</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📊 Inheritance Distribution Engine</h3>
+                    <div class="project-date">Independent Project | 2023</div>
+                    <div class="project-desc">
+                        Developed a sophisticated inheritance calculation system that processes complex legal cases under Islamic law:
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Automatically distributes shares according to heir relationships with 100% accuracy</li>
+                        <li>Generates detailed Excel reports with full audit trails and legal documentation</li>
+                        <li>Provides admin dashboard for data entry, validation, and case management</li>
+                        <li>Handles edge cases including multiple spouses, half-siblings, and missing heirs</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">ExcelJS</span>
+                        <span class="tech-tag">PDF Generation</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📈 Custom Health Monitoring & Logging System</h3>
+                    <div class="project-date">Architecture Design | 2024</div>
+                    <div class="project-desc">
+                        Designed and implemented a production-ready observability infrastructure:
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Real-time health checks for all microservices with automatic recovery</li>
+                        <li>Centralized logging with search, filtering, and export capabilities</li>
+                        <li>Automated alerting based on configurable thresholds (Slack, Email, SMS)</li>
+                        <li>Performance metrics collection and visualization dashboards</li>
+                        <li>99.9% uptime achieved through proactive monitoring</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Event-Driven</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Achievements & Technical Philosophy -->
+            <div class="two-columns">
+                <div class="section">
+                    <h2 class="section-title">🏆 Key Achievements</h2>
+                    <ul class="achievement-list">
+                        <li>Architected scalable batch processing system handling 100,000+ daily transactions</li>
+                        <li>Implemented comprehensive error handling reducing production incidents by 85%</li>
+                        <li>Built monitoring system comparable to Datadog with 60% cost savings</li>
+                        <li>Created automated Excel reporting saving 20+ hours weekly for finance teams</li>
+                        <li>Designed event-driven webhook architecture processing 50,000+ events daily</li>
+                        <li>Optimized database queries achieving 300% performance improvement</li>
+                        <li>Led development of PCI-DSS compliant payment system with zero security incidents</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">⚡ Technical Philosophy</h2>
+                    <ul class="achievement-list">
+                        <li><strong>Linux-first development:</strong> Daily driver on Debian/Kali/Ubuntu, terminal-centric workflow, bash automation expert</li>
+                        <li><strong>Clean architecture:</strong> Emphasis on separation of concerns, maintainability, and testability</li>
+                        <li><strong>Scalability by design:</strong> Build systems that can handle 10x growth without refactoring</li>
+                        <li><strong>Problem-solving mindset:</strong> Create comprehensive solutions that eliminate repetitive manual work</li>
+                        <li><strong>Documentation matters:</strong> Write code that tells a story and docs that save hours of onboarding time</li>
+                        <li><strong>Security first:</strong> Implement security at every layer, not as an afterthought</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience & Education -->
+            <div class="two-columns">
+                <div class="section">
+                    <h2 class="section-title">💼 Professional Experience</h2>
+                    <div class="project-card" style="margin-bottom: 15px;">
+                        <h3>Founder & Lead Developer</h3>
+                        <div class="project-date">MGzon | 2022 – Present</div>
+                        <ul class="achievement-list">
+                            <li>Built and scaled platform from 0 to 10,000+ users across 5 countries</li>
+                            <li>Managed full development lifecycle from requirements to deployment</li>
+                            <li>Hired and mentored junior developers</li>
+                            <li>Architected microservices infrastructure handling 1M+ monthly requests</li>
+                        </ul>
+                    </div>
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <h3>Freelance Full-Stack Developer</h3>
+                        <div class="project-date">2020 – 2022</div>
+                        <ul class="achievement-list">
+                            <li>Delivered 15+ custom web applications for clients across MENA region</li>
+                            <li>Specialized in e-commerce platforms and business management systems</li>
+                            <li>Provided technical consulting and system architecture design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎓 Education & Certifications</h2>
+                    <div class="project-card" style="margin-bottom: 15px;">
+                        <h3>Self-Taught Developer</h3>
+                        <div class="project-date">Continuous learning since 2020</div>
+                        <ul class="achievement-list">
+                            <li>System Architecture & Design Patterns (Advanced)</li>
+                            <li>Database Optimization & Scaling (Advanced)</li>
+                            <li>Linux Systems Administration (Expert)</li>
+                            <li>Fintech & Payment Integration (PCI-DSS Certified)</li>
+                        </ul>
+                    </div>
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <h3>Certifications</h3>
+                        <ul class="achievement-list">
+                            <li>Meta Backend Developer Professional Certificate</li>
+                            <li>Linux Foundation Certified System Administrator (LFCS)</li>
+                            <li>Node.js Security Workshop</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages & Additional Info -->
+            <div class="two-columns">
+                <div class="section">
+                    <h2 class="section-title">🌐 Languages</h2>
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <ul class="achievement-list">
+                            <li><strong>Arabic:</strong> Native (C2)</li>
+                            <li><strong>English:</strong> Professional Working Proficiency (C1) – Technical documentation, client communication, code comments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 Interests & Passions</h2>
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <ul class="achievement-list">
+                            <li>🐧 Linux & Open Source Ecosystem – Active contributor to OSS projects</li>
+                            <li>🏗️ System Architecture & Distributed Systems Design</li>
+                            <li>⌨️ Terminal Automation – Build CLI tools to eliminate repetitive tasks</li>
+                            <li>📚 Technical Writing & Knowledge Sharing</li>
+                            <li>🚀 Building products that solve real-world problems</li>
+                            <li>💡 Fun fact: I built an entire inheritance system just to avoid using Excel 😉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Source & Community -->
+            <div class="section">
+                <h2 class="section-title">🌍 Open Source & Community</h2>
+                <div class="summary-text">
+                    <ul class="achievement-list" style="margin-top: 0;">
+                        <li>Active contributor to open-source Node.js and TypeScript projects</li>
+                        <li>Created and maintained 3 npm packages with 500+ weekly downloads</li>
+                        <li>Regular mentor for junior developers in local tech communities</li>
+                        <li>Write technical articles about system architecture and Linux development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>⚡ Terminal-first developer | 🐧 Linux enthusiast | 🚀 Building systems that matter</p>
+            <p style="margin-top: 8px; font-size: 11px;">📅 Last updated: March 2026 | 🌟 Available for full-time opportunities or consulting</p>
+        </div>
+    </div>
+</body>
+  </html>
