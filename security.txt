@@ -1,0 +1,4 @@
+Contact: mailto:marklasfar@gmail.com
+Expires: 2027-03-27T00:00:00.000Z
+Preferred-Languages: ar, en
+Canonical: https://elasfar.vercel.app/security.txt

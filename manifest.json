@@ -1,0 +1,17 @@
+{
+  "name": "Mark Alasfar - Senior Full-Stack Developer",
+  "short_name": "Mark Alasfar CV",
+  "description": "Professional CV of Ibrahim (Mark) Alasfar, Senior Full-Stack Developer & Systems Architect",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

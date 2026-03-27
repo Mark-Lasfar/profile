@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Annotations>
+  <!-- === مواقعي الشخصية === -->
+  <Annotation about="elasfar.vercel.app/*" timestamp="0x00064e0373fedb91" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://elasfar.vercel.app"/>
+  </Annotation>
+  <Annotation about="mark-elasfar.web.app/*" timestamp="0x00064e0369b03ba9" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://mark-elasfar.web.app"/>
+  </Annotation>
+  <Annotation about="hager-zon.vercel.app/*" timestamp="0x00064e0373fedb90" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://hager-zon.vercel.app"/>
+  </Annotation>
+
+  <!-- === منصات البرمجة والتقنية === -->
+  <Annotation about="*.github.com/*" timestamp="0x00064e02c6d5af5f" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://github.com"/>
+  </Annotation>
+  <Annotation about="*.gitlab.com/*" timestamp="0x00064e036d00763f" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://gitlab.com"/>
+  </Annotation>
+  <Annotation about="*.stackoverflow.com/*" timestamp="0x00064e0373fedb92" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://stackoverflow.com"/>
+  </Annotation>
+  <Annotation about="*.medium.com/*" timestamp="0x00064e0373fedb93" score="0.8">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://medium.com"/>
+  </Annotation>
+  <Annotation about="*.dev.to/*" timestamp="0x00064e0373fedb94" score="0.8">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://dev.to"/>
+  </Annotation>
+
+  <!-- === ويكيبيديا والموسوعات === -->
+  <Annotation about="*.wikipedia.org/*" timestamp="0x00064e0373fedb95" score="0.9">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://wikipedia.org"/>
+  </Annotation>
+  <Annotation about="*.britannica.com/*" timestamp="0x00064e0373fedb96" score="0.7">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://britannica.com"/>
+  </Annotation>
+
+  <!-- === مواقع تعليمية وتقنية === -->
+  <Annotation about="*.mdn.org/*" timestamp="0x00064e0373fedb97" score="1.0">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://mdn.org"/>
+  </Annotation>
+  <Annotation about="*.w3schools.com/*" timestamp="0x00064e0373fedb98" score="0.9">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://w3schools.com"/>
+  </Annotation>
+  <Annotation about="*.freecodecamp.org/*" timestamp="0x00064e0373fedb99" score="0.8">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://freecodecamp.org"/>
+  </Annotation>
+
+  <!-- === منصات التوظيف والمهنية === -->
+  <Annotation about="*.linkedin.com/*" timestamp="0x00064e0373fedb9a" score="0.9">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://linkedin.com"/>
+  </Annotation>
+  <Annotation about="*.indeed.com/*" timestamp="0x00064e0373fedb9b" score="0.7">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://indeed.com"/>
+  </Annotation>
+
+  <!-- === محتوى تقني عربي === -->
+  <Annotation about="*.academy.hsoub.com/*" timestamp="0x00064e0373fedb9c" score="0.7">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://academy.hsoub.com"/>
+  </Annotation>
+  <Annotation about="*.arabianbytes.com/*" timestamp="0x00064e0373fedb9d" score="0.6">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://arabianbytes.com"/>
+  </Annotation>
+
+  <!-- === مواقع السيرة الذاتية الاحترافية === -->
+  <Annotation about="*.read.cv/*" timestamp="0x00064e0373fedb9e" score="0.6">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://read.cv"/>
+  </Annotation>
+  <Annotation about="*.about.me/*" timestamp="0x00064e0373fedb9f" score="0.5">
+    <Label name="_include_"/>
+    <AdditionalData attribute="original_url" value="https://about.me"/>
+  </Annotation>
+</Annotations>

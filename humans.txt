@@ -1,0 +1,6 @@
+/* HUMAN.TXT */
+/* Developer: Ibrahim (Mark) Alasfar */
+/* Role: Senior Full-Stack Developer & Systems Architect */
+/* GitHub: https://github.com/Mark-Lasfar */
+/* Technologies: Node.js, React, TypeScript, Linux, PostgreSQL */
+/* Last Updated: March 2026 */

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /profile.jpg
+Allow: /logo.svg
+Allow: /humans.txt
+Allow: /security.txt
+Allow: /sitemap.xml
+
+Disallow: /verification/
+Disallow: /context.xml
+Disallow: /annotations.xml
+
+Sitemap: https://elasfar.vercel.app/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Host directive
+Host: https://elasfar.vercel.app
+
+# Clean parameters
+Clean-param: utm_source&utm_medium&utm_campaign
