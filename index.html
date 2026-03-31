@@ -69,7 +69,7 @@
 
     <meta name="geo.places" content="Cairo, Egypt">
     <meta name="geo.region" content="EG-C">
-    <link rel="icon" type="image/x-icon" href="./logo.svg">
+    <link rel="icon" type="image/x-icon" href="https://elasfar.vercel.app/logo.png">
 
 
     <style>
@@ -109,7 +109,7 @@
             padding: 40px 20px;
             text-align: center;
             color: rgb(255, 255, 255);
-            background-image: url('./profile.jpg');
+            background-image: url('https://elasfar.vercel.app/profile.jpg');
             background-size: cover;
             background-position: center 30%;
         }
@@ -1136,7 +1136,7 @@ document.getElementById('downloadPDF').addEventListener('click', async () => {
     function showWelcomeScreen(container) {
         container.innerHTML = `
             <div class="welcome-screen">
-                <img src="/logo.png" alt="MGzon Logo" style="width: 80px; height: 80px; margin-bottom: 16px;">
+                <img src="https://elasfar.vercel.app/logo.png" alt="MGzon Logo" style="width: 80px; height: 80px; margin-bottom: 16px;">
                 <h3>MGzon Browser</h3>
                 <div class="google-search-center">
                     <input type="text" id="centerSearchInputDynamic" placeholder="🔍 Search or enter URL">
@@ -1676,75 +1676,85 @@ function loadUrlInTab(tabId, url) {
       },
       "keywords": "cli, terminal, mgzon, erp, fintech, developer-tools"
     },
-    {
-      "@type": "Product",
-      "@id": "https://mgzon.com/#product",
-      "name": "MGzon ERP Platform",
-      "description": "Complete enterprise resource planning solution with fintech, e-commerce, HR, real estate, and inheritance management modules.",
-      "brand": {
-        "@type": "Brand",
-        "name": "MGzon",
-        "logo": "https://elasfar.vercel.app/logo.svg"
+    
+{
+  "@type": "Product",
+  "@id": "https://mgzon.com/#product",
+  "name": "MGzon ERP Platform",
+  "description": "Complete enterprise resource planning solution with fintech, e-commerce, HR, real estate, and inheritance management modules.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://elasfar.vercel.app/logo.svg",
+    "width": 1200,
+    "height": 630,
+    "caption": "MGzon ERP Platform Logo"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "MGzon",
+    "logo": "https://elasfar.vercel.app/logo.svg"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free for early adopters, enterprise plans available",
+    "availability": "https://schema.org/OnlineOnly",
+    "availabilityStarts": "2022-01-01",
+    "priceValidUntil": "2027-12-31",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free for early adopters, enterprise plans available",
-        "availability": "https://schema.org/OnlineOnly",
-        "availabilityStarts": "2022-01-01",
-        "priceValidUntil": "2027-12-31",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": [
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "EG"
-            },
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "SA"
-            },
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "AE"
-            }
-          ],
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "EG"
         },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "EG",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "SA"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AE"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
       }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "EG",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "returnFees": "https://schema.org/FreeReturn",
+      "returnMethod": "https://schema.org/ReturnByMail"
     }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
   ]
 }
 </script>
