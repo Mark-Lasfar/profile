@@ -1,0 +1,22 @@
+{
+  "name": "mgzon-cv",
+  "version": "1.0.0",
+  "description": "Mark Al-Asfar CV with MGzon Browser and Search Proxy",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "node proxy.js",
+    "dev": "nodemon proxy.js",
+    "vercel-build": "echo 'Build completed'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "keywords": ["mgzon", "cv", "browser", "search", "duckduckgo"],
+  "author": "Mark Al-Asfar",
+  "license": "MIT"
+}
