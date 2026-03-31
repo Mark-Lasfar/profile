@@ -1,27 +1,40 @@
-// api/search.js - Stable version for Vercel
+// api/search.js - Minimal stable version
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Log للـ debugging
+  console.log('Request URL:', req.url);
+  console.log('Query params:', req.query);
 
   const urlPath = req.url.split('?')[0];
 
   // ========== /search endpoint ==========
   if (urlPath === '/search') {
     const { q } = req.query;
+    
     if (!q || q.trim() === '') {
       return res.status(400).json({ error: 'Query parameter "q" is required' });
     }
 
     try {
-      const apiUrl = `https://api.duckduckgo.com/?q=${encodeURIComponent(q)}&format=json&no_redirect=1&no_html=1&skip_disambig=1`;
+      // استدعاء DuckDuckGo API
+      const apiUrl = `https://api.duckduckgo.com/?q=${encodeURIComponent(q)}&format=json&no_redirect=1&no_html=1`;
       
       const response = await fetch(apiUrl, {
-        headers: { 'User-Agent': 'MGzonBrowser/1.0' }
+        headers: {
+          'User-Agent': 'MGzonBrowser/1.0'
+        }
       });
 
       if (!response.ok) {
@@ -30,39 +43,26 @@ export default async function handler(req, res) {
 
       const data = await response.json();
 
-      // تحويل الروابط البسيطة
-      function fixUrl(url) {
-        if (!url) return url;
-        if (url.startsWith('http')) {
-          return `/fetch?url=${encodeURIComponent(url)}`;
-        }
-        return url;
-      }
-
-      if (Array.isArray(data.RelatedTopics)) {
-        data.RelatedTopics = data.RelatedTopics.map(topic => {
-          if (topic.FirstURL) topic.FirstURL = fixUrl(topic.FirstURL);
-          if (topic.Topics) {
-            topic.Topics = topic.Topics.map(sub => {
-              if (sub.FirstURL) sub.FirstURL = fixUrl(sub.FirstURL);
-              return sub;
-            });
-          }
-          return topic;
-        });
-      }
-
+      // إرجاع النتائج بشكل مبسط
       return res.status(200).json({
-        ...data,
-        timestamp: Date.now(),
-        AbstractText: data.AbstractText ? data.AbstractText.replace(/<[^>]*>/g, '') : null,
+        success: true,
+        query: q,
+        abstract: data.AbstractText || null,
+        abstractUrl: data.AbstractURL || null,
+        topics: data.RelatedTopics?.slice(0, 10).map(t => ({
+          text: t.Text,
+          url: t.FirstURL ? `/fetch?url=${encodeURIComponent(t.FirstURL)}` : null
+        })) || [],
+        timestamp: Date.now()
       });
-    } catch (err) {
-      console.error('Search error:', err.message);
+
+    } catch (error) {
+      console.error('Search error:', error);
       return res.status(500).json({ 
-        error: 'Search failed', 
-        message: err.message,
-        query: q 
+        success: false,
+        error: 'Search failed',
+        message: error.message,
+        query: q
       });
     }
   }
@@ -70,6 +70,7 @@ export default async function handler(req, res) {
   // ========== /fetch endpoint ==========
   if (urlPath === '/fetch') {
     let { url } = req.query;
+    
     if (!url) {
       return res.status(400).send('Missing url parameter');
     }
@@ -89,7 +90,7 @@ export default async function handler(req, res) {
         return res.status(400).send('Invalid URL format');
       }
 
-      console.log(`Fetching: ${targetUrl}`);
+      console.log('Fetching:', targetUrl);
 
       // مهلة 10 ثواني
       const controller = new AbortController();
@@ -126,14 +127,6 @@ export default async function handler(req, res) {
       }
       return res.status(500).send(`Failed to load page: ${err.message}`);
     }
-  }
-
-  // ========== /redirect endpoint (alias for /fetch) ==========
-  if (urlPath === '/redirect') {
-    const { u } = req.query;
-    if (!u) return res.status(400).send('Missing u parameter');
-    req.query.url = u;
-    return handler(req, res);
   }
 
   // ========== Unknown endpoint ==========
