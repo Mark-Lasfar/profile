@@ -10,7 +10,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "*.{png,svg,jpg,txt,xml,json,ico}",
+      "src": "*.{png,svg,jpg,jpeg,gif,webp,ico,txt,xml,json}",
       "use": "@vercel/static"
     }
   ],
@@ -30,6 +30,10 @@
     {
       "src": "/redirect",
       "dest": "/api/search.js"
+    },
+    {
+      "src": "/(.*\\.(png|svg|jpg|jpeg|gif|webp|ico|txt|xml|json))",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
