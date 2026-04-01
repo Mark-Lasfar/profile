@@ -1,4 +1,6 @@
-// api/search.js - Minimal stable version
+// api/search.js - Using axios for better reliability
+import axios from 'axios';
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -13,10 +15,6 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Log للـ debugging
-  console.log('Request URL:', req.url);
-  console.log('Query params:', req.query);
-
   const urlPath = req.url.split('?')[0];
 
   // ========== /search endpoint ==========
@@ -28,36 +26,50 @@ export default async function handler(req, res) {
     }
 
     try {
-      // استدعاء DuckDuckGo API
       const apiUrl = `https://api.duckduckgo.com/?q=${encodeURIComponent(q)}&format=json&no_redirect=1&no_html=1`;
       
-      const response = await fetch(apiUrl, {
+      const response = await axios.get(apiUrl, {
+        timeout: 8000,
         headers: {
-          'User-Agent': 'MGzonBrowser/1.0'
+          'User-Agent': 'MGzonBrowser/1.0',
+          'Accept': 'application/json'
         }
       });
 
-      if (!response.ok) {
-        throw new Error(`DuckDuckGo API returned ${response.status}`);
+      const data = response.data;
+
+      function fixUrl(url) {
+        if (!url) return url;
+        if (url.startsWith('http')) {
+          return `/fetch?url=${encodeURIComponent(url)}`;
+        }
+        return url;
       }
 
-      const data = await response.json();
+      if (Array.isArray(data.RelatedTopics)) {
+        data.RelatedTopics = data.RelatedTopics.map(topic => {
+          if (topic.FirstURL) topic.FirstURL = fixUrl(topic.FirstURL);
+          if (topic.Topics) {
+            topic.Topics = topic.Topics.map(sub => {
+              if (sub.FirstURL) sub.FirstURL = fixUrl(sub.FirstURL);
+              return sub;
+            });
+          }
+          return topic;
+        });
+      }
 
-      // إرجاع النتائج بشكل مبسط
       return res.status(200).json({
         success: true,
         query: q,
-        abstract: data.AbstractText || null,
-        abstractUrl: data.AbstractURL || null,
-        topics: data.RelatedTopics?.slice(0, 10).map(t => ({
-          text: t.Text,
-          url: t.FirstURL ? `/fetch?url=${encodeURIComponent(t.FirstURL)}` : null
-        })) || [],
+        AbstractText: data.AbstractText ? data.AbstractText.replace(/<[^>]*>/g, '') : null,
+        AbstractURL: data.AbstractURL ? fixUrl(data.AbstractURL) : null,
+        RelatedTopics: data.RelatedTopics || [],
         timestamp: Date.now()
       });
 
     } catch (error) {
-      console.error('Search error:', error);
+      console.error('Search error:', error.message);
       return res.status(500).json({ 
         success: false,
         error: 'Search failed',
@@ -78,12 +90,10 @@ export default async function handler(req, res) {
     try {
       let targetUrl = decodeURIComponent(url);
       
-      // تأكد من وجود بروتوكول
       if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
         targetUrl = 'https://' + targetUrl;
       }
 
-      // تحقق من صحة الرابط
       try {
         new URL(targetUrl);
       } catch (e) {
@@ -92,41 +102,39 @@ export default async function handler(req, res) {
 
       console.log('Fetching:', targetUrl);
 
-      // مهلة 10 ثواني
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-      const response = await fetch(targetUrl, {
+      const response = await axios.get(targetUrl, {
+        timeout: 10000,
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
           'Accept': 'text/html,application/xhtml+xml',
         },
-        redirect: 'follow',
-        signal: controller.signal
+        maxRedirects: 5,
+        responseType: 'text'
       });
 
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        return res.status(response.status).send(`Cannot load page: ${response.status}`);
-      }
-
-      let html = await response.text();
+      let html = response.data;
       
-      // تنظيف بسيط
       html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.setHeader('X-Frame-Options', 'SAMEORIGIN');
       return res.send(html);
       
-    } catch (err) {
-      console.error('Fetch error:', err.message);
-      if (err.name === 'AbortError') {
+    } catch (error) {
+      console.error('Fetch error:', error.message);
+      if (error.code === 'ECONNABORTED') {
         return res.status(504).send('Request timeout - The website took too long to respond');
       }
-      return res.status(500).send(`Failed to load page: ${err.message}`);
+      return res.status(500).send(`Failed to load page: ${error.message}`);
     }
+  }
+
+  // ========== /redirect endpoint ==========
+  if (urlPath === '/redirect') {
+    const { u } = req.query;
+    if (!u) return res.status(400).send('Missing u parameter');
+    req.query.url = u;
+    return handler(req, res);
   }
 
   // ========== Unknown endpoint ==========
